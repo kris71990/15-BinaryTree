@@ -2,8 +2,7 @@
 
 import BinaryTree from '../lib/binary-tree';
 import Node from '../lib/node';
-import { preOrderTraversal, postOrderTraversal, inOrderTraversal } from '../lib/traversals';
-
+// import { preOrderTraversal, postOrderTraversal, inOrderTraversal } from '../lib/traversals';
 
 const one = new Node(1);
 const two = new Node(2);
@@ -48,10 +47,32 @@ describe('testing pre-order traversal of binary tree', () => {
 });
 
 describe('testing post-order traversal of binary tree', () => {
-
+  test('should return nodes in post-order traversal', () => {
+    const traversal = tree2.postOrderTraversal(tree.root);
+    expect(traversal.charAt(0)).toEqual('8');
+    expect(traversal.charAt(2)).toEqual('9');
+    expect(traversal.charAt(4)).toEqual('7');
+    expect(traversal.charAt(6)).toEqual('6');
+    expect(traversal.charAt(8)).toEqual('2');
+    expect(traversal.charAt(10)).toEqual('4');
+    expect(traversal.charAt(12)).toEqual('5');
+    expect(traversal.charAt(14)).toEqual('3');
+    expect(traversal.charAt(16)).toEqual('1');
+  });
 });
 
 describe('testing in-order traversal of binary tree', () => {
-
+  test('should return nodes in in-order traversal', () => {
+    const traversal = tree3.inOrderTraversal(tree.root);
+    expect(traversal.charAt(0)).toEqual('6');
+    expect(traversal.charAt(2)).toEqual('8');
+    expect(traversal.charAt(4)).toEqual('7');
+    expect(traversal.charAt(6)).toEqual('9');
+    expect(traversal.charAt(8)).toEqual('2');
+    expect(traversal.charAt(10)).toEqual('1');
+    expect(traversal.charAt(12)).toEqual('4');
+    expect(traversal.charAt(14)).toEqual('3');
+    expect(traversal.charAt(16)).toEqual('5');
+  });
 });
 
